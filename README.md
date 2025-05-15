@@ -1,3 +1,35 @@
+# Posts Feed
+
+## Setup
+
+```
+pnpm i
+pnpm exec prisma generate
+pnpm run dev
+```
+
+## Discussion
+
+### Design choices
+
+### Scalability
+
+### Performance
+
+https://tanstack.com/query/latest/docs/framework/react/guides/infinite-queries#what-if-i-want-to-limit-the-number-of-pages
+
+prisma relations?
+
+### Database
+
+### SSR and SSG
+
+### Monitoring and logging
+
+### Infrastructure
+
+### Extensions
+
 # Fanvue's Fullstack challenge
 
 Setup the project:
