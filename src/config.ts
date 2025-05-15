@@ -1,4 +1,4 @@
-const POSTS_PER_PAGE = 50;
+const POSTS_PER_PAGE = 20;
 const COMMENTS_PER_PAGE = 3;
 
 export { POSTS_PER_PAGE, COMMENTS_PER_PAGE };
