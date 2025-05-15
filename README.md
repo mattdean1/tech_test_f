@@ -63,6 +63,8 @@ Backend: set up logging with e.g. winston, push into something like OpenSearch
 
 Frontend: less recent experience here but would use Sentry in the first instance - ideally can push those into the same OpenSearch instance so we have one place to search aggregated logs.
 
+Nice to have a smoke test for uptime, e.g. a lambda to ping the important endpoints or visit the site every so often.
+
 ### Infrastructure
 
 Vercel is the easiest but v expensive at any scale, so would aim to use something like https://opennext.js.org/aws to deploy on cheaper hardware. Maybe we would move away from Next to allow more flexibility tuning the backend.
