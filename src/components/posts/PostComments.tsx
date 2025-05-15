@@ -11,6 +11,7 @@ import { trpcReact } from "@/trpc/trpcReact";
 
 import Comment from "@/components/posts/Comment";
 import AddComment from "@/components/posts/AddComment";
+import { pluralise } from "@/lib/format";
 
 type PostCommentsProps = {
   postId: number;
@@ -41,6 +42,8 @@ export default function PostComments({
     }
   );
   const comments = data?.pages.flatMap((page) => page.comments) ?? [];
+  const dynamicNumComments =
+    comments.length === 0 ? numComments : comments.length;
 
   const handleShowComments = () => {
     setShowComments(!showComments);
@@ -55,7 +58,12 @@ export default function PostComments({
     <>
       <CardActionArea sx={{ p: 1 }} onClick={handleShowComments}>
         <Typography variant="body2" color="text.secondary">
-          {numComments} comments
+          {dynamicNumComments === 0
+            ? "No comments yet - add your take"
+            : `${dynamicNumComments} ${pluralise(
+                "Comment",
+                dynamicNumComments
+              )}`}
         </Typography>
       </CardActionArea>
       <Collapse in={showComments}>
